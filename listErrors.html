@@ -1,0 +1,28 @@
+<table class="table table-striped">
+	<tr>
+		<th>Id</th>
+		<th>Abierto/Cerrado</th>
+		<th>Gravedad</th>
+		<th>Tipo de error</th>
+		<th>Estado</th>
+		<th>Creado por</th>
+		<th>Desarrolladores implicados</th>
+		<th>Breve descripción</th>
+		<th>Acción</th>
+	</tr>
+	<tr ng-repeat="error in errors">
+		<td>{{error.id}}</td>
+		<td>{{(error.closed ? 'cerrado' :'abierto')}}</td>
+		<td>{{error.gravity}}</td>
+		<td>{{error.type}}</td>
+		<td>{{error.status}}</td>
+		<td>{{error.creator}}</td>
+		<td>{{error.devsInvolved}}</td>
+		<td>{{error.shortDescription}}</td>
+		<td>
+			<a href="">Ver</a>
+			<a href="">Abierto/Cerrado</a>
+			<a href="">Eliminar</a>
+		</td>
+	</tr>
+</table>

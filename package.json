@@ -1,0 +1,11 @@
+{
+  "name": "MyLBT",
+  "version": "1.0.0",
+  "description": "Sistema de control de errores",
+  "main": "server.js",
+  "author": "Maria Alonso Lopez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

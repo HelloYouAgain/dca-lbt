@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="container">
+		<h2>Error <small>ID {{error.id}} <kbd ng-class="{'pendingKBD': (error.status=='pendiente'), 'listedKBD': (error.status=='listado'),'resolvedKBD': (error.status=='resuelto'),'notAnErrorKBD': (error.status=='no es un error')}">{{error.status}}</kbd></small> </h2>
+		<ul>
+
+			<br>
+			<li ng-show="(error.type!='wishlist')"><strong>Gravedad: </strong><small>{{error.gravity}}</small></li>
+			<li><strong>Tipo: </strong><small>{{error.type}}</small></li>
+
+			<br>
+			<li><strong>Reportado por: </strong><small>{{error.creator.name}} &lt;{{error.creator.email}}&gt;</small></li>
+			<li>
+				<strong>Desarrolladores implicados: </strong>
+				<small>
+					<ul>
+						<li ng-show="(error.devsInvolved.dev1)">Dev 1</li>
+						<li ng-show="(error.devsInvolved.dev2)">Dev 2</li>
+						<li ng-show="(error.devsInvolved.dev3)">Dev 3</li>
+						<li ng-show="(error.devsInvolved.dev4)">Dev 4</li>
+					</ul>
+				</small>
+			</li>
+			<br>
+			<li><strong>Descripción corta </strong><p>{{error.shortDescription}}</p></li>
+			<li><strong>Descripción larga </strong><p>{{error.largeDescription}}</p></li>
+		</ul>
+	</div>
+	<div class="container">
+		<h3>Comentarios</h3>
+		<br>
+		<form>
+			<div class="form-inline">
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="newComment.author.name" placeholder="Nombre">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="newComment.author.email" placeholder="Email">
+				</div>
+				<a class="btn btn-default" ng-click="saveComment()">Enviar</a>
+				<a class="btn btn-default" href="#/">Atrás</a>
+			</div>
+			<br>
+			<div class="form-group">
+				<textarea class="form-control" rows="3" ng-model="newComment.message"></textarea>
+			</div>
+		</form>
+		<br>
+		
+		<div class="panel panel-default" ng-repeat="comment in error.comments">
+			<div class="panel-heading"><small>{{comment.author.name}} &lt;{{comment.author.email}}&gt;</small></div>
+			<div class="panel-body">
+				{{comment.message}}
+			</div>
+		</div>
+	</div>
+</div>

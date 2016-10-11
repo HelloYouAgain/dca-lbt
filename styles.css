@@ -1,0 +1,11 @@
+.pendingKBD{
+	background-color: darkred;
+}
+.listedKBD{
+	background-color: dodgerblue;
+}
+.resolvedKBD{
+	background-color: forestgreen;
+}
+.notAnErrorKBD{
+}

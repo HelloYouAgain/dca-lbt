@@ -1,0 +1,70 @@
+<div class="container">
+	<h3>Error <small>ID {{error.id}}</small> </h3>	
+		
+	<br>
+	<p><strong>Reportado por </strong>{{error.creator.name}} &lt;{{error.creator.email}}&gt;</p>
+	<br>
+	<form>
+		<div class="form-group">
+			<strong>Estado </strong>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					{{error.status}}
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a ng-click="error.status = 'pendiente'">Pendiente</a></li>
+					<li><a ng-click="error.status = 'listado'">Listado</a></li>
+					<li><a ng-click="error.status = 'resuelto'">Resuelto</a></li>
+					<li><a ng-click="error.status = 'no es un error'">No es un error</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="form-group">
+			<strong>Tipo </strong>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					{{error.type}}
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a ng-click="error.type = 'importante'">Importante</a></li>
+					<li><a ng-click="error.type = 'normal'">Normal</a></li>
+					<li><a ng-click="error.type = 'menor'">Menor</a></li>
+					<li><a ng-click="error.type = 'wishlist'; error.gravity = ''">Wishlist</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="form-group">
+			<strong>Gravedad </strong>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" ng-class="{'disabled': (error.type=='wishlist')}" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+					{{error.gravity}}
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a ng-click="error.gravity = 'critico'">Crítico</a></li>
+					<li><a ng-click="error.gravity = 'grave'">Grave</a></li>
+					<li><a ng-click="error.gravity = 'serio'">Serio</a></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+	<br>
+
+	<p><strong>Desarrolladores implicados</strong></p>
+	<div class="container">
+		<p><label><input type="radio" ng-click="error.devsInvolved.dev1=!error.devsInvolved.dev1;" ng-checked="error.devsInvolved.dev1">Dev 1</label></p>
+		<p><label><input type="radio" ng-click="error.devsInvolved.dev2=!error.devsInvolved.dev2;" ng-checked="error.devsInvolved.dev2">Dev 2</label></p>
+		<p><label><input type="radio" ng-click="error.devsInvolved.dev3=!error.devsInvolved.dev3;" ng-checked="error.devsInvolved.dev3">Dev 3</label></p>
+		<p><label><input type="radio" ng-click="error.devsInvolved.dev4=!error.devsInvolved.dev4;" ng-checked="error.devsInvolved.dev4">Dev 4</label></p>
+	</div>
+
+	<strong>Descripción corta </strong><p>{{error.shortDescription}}</p>
+	<strong>Descripción larga </strong><p>{{error.largeDescription}}</p>
+	<br>
+	<p>
+		<a class="btn btn-info" ng-click="saveErrorChanges()">Guardar</a>
+		<a class="btn btn-default" href="#/">Atrás</a>
+	</p>
+</div>

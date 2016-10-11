@@ -1,2 +1,26 @@
-<h1>{{saludo}}</h1>
-
+<div class="container">
+	<h2>Nuevo reporte de error</h2>
+	<br>
+	<form>
+		<div class="form-group">
+			<label>Nombre</label>
+			<input type="text" class="form-control" ng-model="error.creator.name" placeholder="Nombre">
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<input type="text" class="form-control" ng-model="error.creator.email" placeholder="Email">
+		</div>
+		<div class="form-group">
+			<label>Descripción corta</label>
+			<input type="text" class="form-control" ng-model="error.shortDescription" placeholder="Descripción corta">
+		</div>
+		<div class="form-group">
+			<label>Descripción larga</label>
+			<textarea class="form-control" rows="3" ng-model="error.largeDescription"></textarea>
+		</div>
+		<p>
+			<a class="btn btn-info" ng-click="saveError()">Enviar</a>
+			<a class="btn btn-default" href="#/">Atrás</a>
+		</p>
+	</form>
+</div>

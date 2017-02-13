@@ -1,5 +1,4 @@
-# dca-lbt
-Sistema de control y reporte de errores
+## Sistema de control y reporte de errores
 
 Para ejecutarlo:
 
@@ -25,3 +24,5 @@ La gravedad del reporte pueden ser tres (sacados del ejemplo de Debian del pdf d
 - critical: Hace que software no relacionado entre sí en el sistema (o el sistema entero) falle, o cause serias pérdidas de datos, o introduzca un agujero de seguridad en el sistema donde se instale el paquete.
 - grave: Hace que el paquete en cuestión no se pueda utilizar o no se pueda casi nunca, o cause pérdida de datos, o introduce un agujero de seguridad que permita el acceso a las cuentas de los usuarios que usen el paquete.
 - serious: Es una violación severa de la política de Debian (en pocas palabras, viola una directiva debe (must) o requerida (required)) o, en opinión del responsable del paquete o del responsable de la publicación de una versión de debian, hace que el paquete no se pueda publicar.
+
+> Realizado por María Alonso López para la asignatura Desarrollo Colaborativo de Aplicaciones de la Universidad de Alicante 2016/17.
